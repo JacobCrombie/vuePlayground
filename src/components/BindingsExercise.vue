@@ -10,7 +10,7 @@
                         Check out what happens below. Now go change the value of message in our components script area
                         and see what happens.</p>
                     <p> {{
-                        <!-- Add your code inside the curlies --> }}</p>
+                        this.message }}</p>
                 </div>
                 <div class="border p-1">
                     <h5>Two Way Data Binding</h5>
@@ -18,18 +18,18 @@
                         Then reference that data property in the html to display the value. Notice Vue will rerender
                         each time the value changes.</p>
                     <!-- add a v-model to this input below called "myName"-->
-                    <input>
+                    <input v-model="myName">
                     <p> {{
-                        <!-- Add your code inside the curlies --> }}</p>
+                        this.myName }}</p>
                 </div>
                 <div class="border p-1">
                     <h5>Class Binding</h5>
                     <p>Use class binding to reference a property(isActive) in the components data object to determine
                         when to add the class to the elements class list. Then change the value of that data
                         property(isActive) to true. Notice Vue will rerender each time the value changes.</p>
-                    <div class="red">
+                    <div class="red" >
                         <!-- add a class binding attribute to the p tag -->
-                        <p>This text will turn green on active</p>
+                        <p :class="{active: isActive}">This text will turn green on active</p>
                     </div>
                 </div>
             </div>
@@ -44,8 +44,9 @@
         name: "binding-exercises",
         data() {
             return {
+                myName: "",
                 //create a property called myName and set its value to "type your name here"
-                message: "Super secret message here!",
+                message: "Hello there",
                 //change isActive to true 
                 isActive: false
             }
